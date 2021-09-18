@@ -1,0 +1,168 @@
+* {
+  box-sizing: border-box;
+}
+
+/* MOBILE & TABLET */
+@media (max-width: 1023px) {
+  :root {
+    --height-header: 70px;
+    --height-navbar: 0px;
+    --height-sort-bar: 46px;
+  }
+  .hide-tablet-mobile {
+    display: none;
+  }
+
+  .header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 9;
+  }
+
+  .header__cart {
+    width: 80px;
+    justify-content: flex-end;
+  }
+
+  .cart__list {
+    position: fixed;
+    top: var(--height-header);
+    width: 100%;
+    right: 0;
+    padding: 0 calc((100% - 644px) / 2);
+  }
+
+  .cart__list::before {
+    display: none;
+  }
+
+  .body__container {
+    margin-top: calc(var(--height-header) + var(--height-sort-bar));
+  }
+
+  .header__sort-bar {
+    display: flex;
+  }
+
+  .content__body {
+    padding-top: 6px;
+    margin: 0 4px;
+  }
+
+  .mobile-category__list {
+    padding-top: 12px;
+  }
+
+  .mobile-category {
+    display: flex;
+  }
+}
+
+/*  TABLET */
+@media (min-width: 740px) and (max-width: 1023px) {
+  :root {
+    --height-header: 70px;
+    --height-navbar: 0px;
+    --height-sort-bar: 46px;
+  }
+  .hide-tablet {
+    display: none;
+  }
+
+  .header__search {
+    height: var(--height-header);
+  }
+
+  .cart__list-items {
+    max-height: 22vh;
+  }
+
+  .mobile-category {
+    display: flex;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 739px) {
+  :root {
+    --height-header: 70px;
+    --height-navbar: 0px;
+    --height-sort-bar: 46px;
+  }
+  .hide-mobile {
+    display: none;
+  }
+
+  .mobile-search-checkbox {
+    padding: 6px 8px;
+  }
+
+  .header__mobile-search {
+    padding: 10px 12px;
+    display: flex;
+  }
+
+  .header__search {
+    justify-content: space-between;
+    height: var(--height-header);
+  }
+
+  .header__logo,
+  .header__cart {
+    width: unset;
+  }
+
+  .header__cart-hover {
+    right: 0px;
+  }
+
+  .header__search-input {
+    position: fixed;
+    top: var(--height-header);
+    left: 0;
+    right: 0;
+    z-index: 2;
+    height: var(--height-sort-bar);
+    border: 1px solid #ccc;
+    box-shadow: 0 1 2px rgba(0, 0, 0, 0.5);
+    padding: 0px 6px;
+    animation: dropDownMobile linear 0.4s;
+    will-change: opacity, left;
+    display: none;
+  }
+
+  .header__checkbox-input:checked ~ .header__search-input {
+    display: flex;
+  }
+
+  @keyframes dropDownMobile {
+    from {
+      left: -100%;
+      opacity: 0;
+    }
+    to {
+      left: 0;
+      opacity: 1;
+    }
+  }
+
+  .cart__list {
+    z-index: 3;
+  }
+
+  .pagination-item__link {
+    min-width: 25px;
+    font-size: 1.6rem;
+    line-height: 24px;
+    height: 24px;
+  }
+  .pagination-top-space {
+    padding-top: 18px;
+    padding-bottom: 12px;
+  }
+
+  .footer__container {
+    padding: 0 16px;
+  }
+}
